@@ -17,6 +17,9 @@ jobs:
   post:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: tiktok-story-bot
     steps:
       - uses: actions/checkout@v4
 
@@ -65,5 +68,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: video-${{ github.run_number }}
-          path: output/
+          path: tiktok-story-bot/output/
           retention-days: 7
